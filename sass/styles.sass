@@ -1,8 +1,10 @@
 // Font imports
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Open+Sans+Condensed:wght@700&display=swap')
 
+
 // Variables
 $breakpoint: 768px
+
 
 // General styles
 body 
@@ -15,9 +17,8 @@ body
 .container 
   margin: 0 auto
   padding: 0em 1em 0 1em
+  box-sizing: border-box
   max-width: $breakpoint
-  @media only screen and (min-width: $breakpoint)
-    padding: 0
 
 h1, h2
   font-family: "Open Sans Condensed", sans-serif
@@ -41,6 +42,7 @@ p
 .hidden
   display: none
 
+
 // Components
 .logo-text
   display: inline-block
@@ -48,30 +50,32 @@ p
   opacity: 0.85
 
 .header
-  margin-bottom: 2em
+  margin-bottom: 1.5em
 
 .button-loading
   display: flex
   margin: 1.5em 0
+  @media only screen and (max-width: $breakpoint)
+    flex-direction: column
   .btn
     margin-right: 1.5em
     @media only screen and (max-width: $breakpoint)
       margin-bottom: 1em
-  @media only screen and (max-width: $breakpoint)
-    flex-direction: column
-
+      width: 100%
 
 .rhyming-options
   display: flex
   align-items: center
-  label
-    margin-right: 1em
   @media only screen and (max-width: $breakpoint)
     flex-direction: column
+    align-items: flex-start
+    div
+      margin: 0.25em 0
+  label
+    margin-right: 1em
 
 #text
   width: 100%
-  margin-top: 1em
   padding: 0.5em 1em 0 1em
   box-sizing: border-box
   resize: vertical
@@ -95,6 +99,9 @@ p
   margin-right: 1.5em
   text-align: center
   font-size: 0.75em
+  @media only screen and (max-width: $breakpoint)
+    height: 2em 
+    margin-bottom: 0.5em
 
   > div
     background-color: #333

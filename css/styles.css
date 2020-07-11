@@ -9,10 +9,8 @@ body {
 .container {
   margin: 0 auto;
   padding: 0em 1em 0 1em;
+  box-sizing: border-box;
   max-width: 768px; }
-  @media only screen and (min-width: 768px) {
-    .container {
-      padding: 0; } }
 
 h1, h2 {
   font-family: "Open Sans Condensed", sans-serif;
@@ -39,32 +37,35 @@ p {
   opacity: 0.85; }
 
 .header {
-  margin-bottom: 2em; }
+  margin-bottom: 1.5em; }
 
 .button-loading {
   display: flex;
   margin: 1.5em 0; }
+  @media only screen and (max-width: 768px) {
+    .button-loading {
+      flex-direction: column; } }
   .button-loading .btn {
     margin-right: 1.5em; }
     @media only screen and (max-width: 768px) {
       .button-loading .btn {
-        margin-bottom: 1em; } }
-  @media only screen and (max-width: 768px) {
-    .button-loading {
-      flex-direction: column; } }
+        margin-bottom: 1em;
+        width: 100%; } }
 
 .rhyming-options {
   display: flex;
   align-items: center; }
-  .rhyming-options label {
-    margin-right: 1em; }
   @media only screen and (max-width: 768px) {
     .rhyming-options {
-      flex-direction: column; } }
+      flex-direction: column;
+      align-items: flex-start; }
+      .rhyming-options div {
+        margin: 0.25em 0; } }
+  .rhyming-options label {
+    margin-right: 1em; }
 
 #text {
   width: 100%;
-  margin-top: 1em;
   padding: 0.5em 1em 0 1em;
   box-sizing: border-box;
   resize: vertical;
@@ -87,6 +88,10 @@ p {
   margin-right: 1.5em;
   text-align: center;
   font-size: 0.75em; }
+  @media only screen and (max-width: 768px) {
+    .spinner {
+      height: 2em;
+      margin-bottom: 0.5em; } }
   .spinner > div {
     background-color: #333;
     height: 100%;
