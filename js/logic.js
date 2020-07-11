@@ -78,7 +78,7 @@ const generateRhymesStruct = async (option) => {
                     for (let line in poem) {
                         for (let word in poem[line]) {
 
-                            console.log(poem[line][word])
+                            // console.log(poem[line][word])
                             word = poem[line][word].replace(/[^A-Za-z0-9_]/g,"").toLowerCase()
 
                             if (rhymingWords.includes(word)) {
