@@ -30,6 +30,9 @@ p {
 .btn {
   display: block; }
 
+.hidden {
+  display: none; }
+
 .logo-text {
   display: inline-block;
   margin-bottom: -0.5em;
@@ -38,9 +41,15 @@ p {
 .header {
   margin-bottom: 2em; }
 
+.button-loading {
+  display: flex;
+  margin: 1.5em 0; }
+  .button-loading .btn {
+    margin-right: 1.5em; }
+
 #text {
   width: 100%;
-  margin: 1em 0;
+  margin-top: 1em;
   padding: 0.5em 1em 0 1em;
   box-sizing: border-box;
   resize: vertical;
@@ -57,3 +66,60 @@ p {
 
 .output {
   white-space: pre; }
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  -webkit-animation: sk-rotate 2.0s infinite linear;
+  animation: sk-rotate 2.0s infinite linear; }
+
+.dot1 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #333;
+  border-radius: 100%;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out; }
+
+.dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #333;
+  border-radius: 100%;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+  top: auto;
+  bottom: 0;
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s; }
+
+@-webkit-keyframes sk-rotate {
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes sk-rotate {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg); } }
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1); } }
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0);
+    -webkit-transform: scale(0); }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1); } }

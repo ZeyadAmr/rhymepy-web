@@ -65,15 +65,6 @@ const generateRhymesStruct = async () => {
             testWord = poem[testLine][testWord].replace(/[^A-Za-z0-9_]/g,"").toLowerCase()
             let firstTestWordExistence = exists(testWord)
 
-            // avoid fetching the rhyming words again if the word was already tested
-            // if (firstTestWordExistence.state) {
-            //     continue
-            // } else {
-            //     // (async function() {
-            //     //     rhymingWords = await fetchRhymes(testWord, 0)
-            //     // })()
-            //     fetchRhymes(testWord, 0).then(response => rhymingWords = response)
-            // }
             if (!firstTestWordExistence.state) {
 
                 await fetchRhymes(testWord, 0).then(response => {
@@ -164,9 +155,9 @@ const matchStanzas = () => {
 const colorizeWords = (matchingWordsList, lineStart, lineEnd, colorIndex) => {
     for (let i = lineStart; i < lineEnd - 1 ; i++) {
         for (let j = 0; j < poem[i].length; j++) {
-            if (matchingWordsList.includes(poem[i][j].replace(/[^A-Za-z0-9_]/g,"").toLowerCase())) {
-                // poem[i][j] = colorizeIndex(colorIndex)
-                poem[i][j] = poem[i][j] + "[" + colorizeIndex(colorIndex) + "]" 
+            if (typeof poem[i][j] === 'string' && matchingWordsList.includes(poem[i][j].replace(/[^A-Za-z0-9_]/g,"").toLowerCase())) {
+                // poem[i][j] = poem[i][j] + "[" + colorizeIndex(colorIndex) + "]" 
+                poem[i][j] = {word: poem[i][j], color: colorizeIndex(colorIndex)}
             }
         }
     }
@@ -180,7 +171,6 @@ const colorizeIndex = (index) => {
 }
 
 const returnPoem = () => {
-    // console.log(poem)
     return poem
 }
 
