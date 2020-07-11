@@ -5,11 +5,6 @@ let poem = []
 let rhymingWords = []
 const colors = ["Yellow", "MediumTurquoise", "LightCoral", "LightGreen", "LightPink", "LightSalmon", "LightSkyBlue", "Orange", "LightSeaGreen", "Violet", "Plum"]
 
-const textValue = document.querySelector('#text').value
-const lines = textValue.split(/\r?\n/)
-for (const line in lines) {
-    poem.push(lines[line].split(' '))
-}
 
 const fetchRhymes = async (word, option) => {
     let datamuseResponse = []
@@ -44,7 +39,16 @@ const fetchRhymes = async (word, option) => {
 }
 
 
-const generateRhymesStruct = async () => {
+const generateRhymesStruct = async (option) => {
+
+    poem = []
+    rhymesStruct = []
+    rhymingWords = []
+    const textValue = document.querySelector('#text').value
+    const lines = textValue.split(/\r?\n/)
+    for (const line in lines) {
+        poem.push(lines[line].split(' '))
+    }
 
     // looks for a word in the rhymesStruct, and returns the key if it exists
     const exists = (word) => {
@@ -67,7 +71,7 @@ const generateRhymesStruct = async () => {
 
             if (!firstTestWordExistence.state) {
 
-                await fetchRhymes(testWord, 2).then(response => {
+                await fetchRhymes(testWord, option).then(response => {
 
                     rhymingWords = response
 

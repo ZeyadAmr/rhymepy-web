@@ -5,8 +5,7 @@ import {generateRhymesStruct, matchStanzas, colors, returnPoem} from './logic.js
 const analyzeButton = document.querySelector('.analyze-button')
 const logoText = document.querySelector('.logo-text')
 const spinner = document.querySelector('.spinner')
-const dot1 = document.querySelector('.dot1')
-const dot2 = document.querySelector('.dot2')
+const rectangles = spinner.querySelectorAll("div") 
 let output = document.querySelector('.output')
 
 
@@ -15,18 +14,20 @@ const randomColor = colors[Math.floor(Math.random()*colors.length)]
 logoText.style.background = "linear-gradient(to top," + randomColor +" 30%, transparent 30%)"
 
 // Set spinner's color to random color
-dot1.style.backgroundColor = randomColor
-dot2.style.backgroundColor = randomColor
+rectangles.forEach(rect => rect.style.backgroundColor = randomColor)
 
 // Start Rhymepy
 analyzeButton.addEventListener("click", () => (async function() {
+    let rhymingOption = document.querySelector('input[name="rhyming-options"]:checked').value 
+    output.innerHTML = ""
     spinner.classList.remove("hidden")
-    await generateRhymesStruct()
+    await generateRhymesStruct(rhymingOption)
     matchStanzas()
     displayPoem()
     spinner.classList.add("hidden")
 })()
 )
+
 
 const displayPoem = () => {
     const poem = returnPoem()
