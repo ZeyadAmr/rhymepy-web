@@ -8,23 +8,25 @@
         <link rel="stylesheet" href="./css/styles.css">
         <title>Rhymepy web</title>
     </head>
-
     <body>
 
         <div class="container">
 
+            <!-- Logo & subtitle -->
             <div class="header">
                 <h1 class="logo-text">Rhymepy</h1>
                 <p>Analyze your rhymes</p>
             </div>
 
+            <!-- Main content -->
             <div class="flex-container">
 
+                <!-- Input text -->
                 <div class="input-container">
-                    <!-- <input type="file" name="" id=""> -->
                     <textarea name="" id="text" rows="16"></textarea>
                 </div>
 
+                <!-- Middle section: button, loading & options -->
                 <div class="button-loading">
                     <button class="btn analyze-button">Analyze rhymes</button>
                     <div class="spinner hidden">
@@ -39,12 +41,10 @@
                             <input type="radio" name="rhyming-options" id="perfect-rhymes" value=0>
                             <label for="perfect-rhymes">Perfect rhymes</label>
                         </div>
-
                         <div>
                             <input type="radio" name="rhyming-options" id="near-rhymes" value=1>
                             <label for="near-rhymes">Near rhymes</label>
                         </div>
-
                         <div>
                             <input type="radio" name="rhyming-options" id="both" value=2 checked>
                             <label for="both">Both</label>
@@ -52,6 +52,7 @@
                     </div>
                 </div>
 
+                <!-- Output text -->
                 <div class="output-container">
                     <p class="output"></p>
                 </div>
@@ -60,7 +61,7 @@
 
         </div>
 
+        <!-- All the fun stuff happens here -->
         <script type="module" src="js/main.js"></script>
     </body>
-
 </html>
