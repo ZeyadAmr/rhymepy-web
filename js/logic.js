@@ -67,13 +67,14 @@ const generateRhymesStruct = async () => {
 
             if (!firstTestWordExistence.state) {
 
-                await fetchRhymes(testWord, 0).then(response => {
+                await fetchRhymes(testWord, 2).then(response => {
 
                     rhymingWords = response
 
                     for (let line in poem) {
                         for (let word in poem[line]) {
 
+                            console.log(poem[line][word])
                             word = poem[line][word].replace(/[^A-Za-z0-9_]/g,"").toLowerCase()
 
                             if (rhymingWords.includes(word)) {
@@ -156,7 +157,6 @@ const colorizeWords = (matchingWordsList, lineStart, lineEnd, colorIndex) => {
     for (let i = lineStart; i < lineEnd - 1 ; i++) {
         for (let j = 0; j < poem[i].length; j++) {
             if (typeof poem[i][j] === 'string' && matchingWordsList.includes(poem[i][j].replace(/[^A-Za-z0-9_]/g,"").toLowerCase())) {
-                // poem[i][j] = poem[i][j] + "[" + colorizeIndex(colorIndex) + "]" 
                 poem[i][j] = {word: poem[i][j], color: colorizeIndex(colorIndex)}
             }
         }
