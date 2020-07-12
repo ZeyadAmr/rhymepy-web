@@ -28,27 +28,49 @@
                 </div>
 
                 <!-- Middle section: button, loading & options -->
-                <div class="button-loading">
-                    <button class="btn analyze-button">Analyze rhymes</button>
-                    <div class="spinner hidden">
-                        <div class="rect1"></div>
-                        <div class="rect2"></div>
-                        <div class="rect3"></div>
-                        <div class="rect4"></div>
-                        <div class="rect5"></div>
+                <div class="middle-section">
+                    <div class="options-container">
+                        <label class="group-label">Highlight:</label>
+                        <div class="rhyming-options radio-container">
+                            <div>
+                                <input type="radio" name="rhyming-options" id="perfect-rhymes" value=0>
+                                <label for="perfect-rhymes">Perfect rhymes</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="rhyming-options" id="near-rhymes" value=1>
+                                <label for="near-rhymes">Near rhymes</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="rhyming-options" id="both" value=2 checked>
+                                <label for="both">Both</label>
+                            </div>
+                        </div>
+                        <label class="group-label">Match by:</label>
+                        <div class="rhyming-methods radio-container">
+                            <div>
+                                <input type="radio" name="rhyming-methods" id="stanza" value=0 checked>
+                                <label for="stanza">Stanza</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="rhyming-methods" id="all" value=2>
+                                <label for="all">All text</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="rhyming-methods" id="lines" value=1>
+                                <label for="lines">Lines</label>
+                                <input class="line-input" type="number" min="1" max="999" name="lines-value" id="lines-value">
+                            </div>
+                        </div>
                     </div>
-                    <div class="rhyming-options">
-                        <div>
-                            <input type="radio" name="rhyming-options" id="perfect-rhymes" value=0>
-                            <label for="perfect-rhymes">Perfect rhymes</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="rhyming-options" id="near-rhymes" value=1>
-                            <label for="near-rhymes">Near rhymes</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="rhyming-options" id="both" value=2 checked>
-                            <label for="both">Both</label>
+
+                    <div class="button-loading">
+                        <button class="btn analyze-button">Analyze rhymes</button>
+                        <div class="spinner hidden">
+                            <div class="rect1"></div>
+                            <div class="rect2"></div>
+                            <div class="rect3"></div>
+                            <div class="rect4"></div>
+                            <div class="rect5"></div>
                         </div>
                     </div>
                 </div>

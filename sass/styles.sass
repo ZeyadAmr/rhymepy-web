@@ -4,6 +4,7 @@
 
 // Variables
 $breakpoint: 768px
+$radius: 0.3em
 
 
 // General styles
@@ -35,9 +36,20 @@ p
 
 .btn
   display: block
-  // padding: 0.5em 1em
-  // background-color: cyan 
-  // border-radius: 0.5em
+  padding: 0.5em 1em
+  color: rgba(0, 0, 0, 0.85)
+  border: none
+  border-radius: 0.2em
+  box-shadow: none
+  cursor: pointer
+  transition: all 0.3s
+  opacity: 0.85
+  &:hover
+    transform: scale(0.98)
+    opacity: 1
+    color: rgba(0, 0, 0, 0.95)
+  &:active
+    transform: scale(0.94)
 
 .hidden
   display: none
@@ -52,8 +64,9 @@ p
 .header
   margin-bottom: 1.5em
 
-.button-loading
-  display: flex
+.middle-section
+  // display: flex
+  // align-items: flex-start
   margin: 1.5em 0
   @media only screen and (max-width: $breakpoint)
     flex-direction: column
@@ -63,9 +76,20 @@ p
       margin-bottom: 1em
       width: 100%
 
-.rhyming-options
+.group-label 
+  font-size: 0.8em  
+  opacity: 0.6
+
+.button-loading
+  display: flex
+  margin-top: 1em
+  @media only screen and (max-width: $breakpoint)
+    flex-direction: column
+
+.radio-container
   display: flex
   align-items: center
+  margin-bottom: 0.5em
   @media only screen and (max-width: $breakpoint)
     flex-direction: column
     align-items: flex-start
@@ -73,6 +97,10 @@ p
       margin: 0.25em 0
   label
     margin-right: 1em
+  .line-input
+    width: 2.75em
+    margin-left: -1em
+    padding: 0
 
 #text
   width: 100%
@@ -81,6 +109,8 @@ p
   resize: vertical
   line-height: 1.2
   color: #333333
+  border: none
+  border-radius: $radius
 
 .output-container
   width: 100%
@@ -89,7 +119,7 @@ p
   box-sizing: border-box
   min-height: 200px
   background-color: #FFFFFF
-  border: 1px solid lightgrey
+  border-radius: $radius
 
 // loading spinner
 .spinner

@@ -26,7 +26,21 @@ p {
   opacity: 0.85; }
 
 .btn {
-  display: block; }
+  display: block;
+  padding: 0.5em 1em;
+  color: rgba(0, 0, 0, 0.85);
+  border: none;
+  border-radius: 0.2em;
+  box-shadow: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  opacity: 0.85; }
+  .btn:hover {
+    transform: scale(0.98);
+    opacity: 1;
+    color: rgba(0, 0, 0, 0.95); }
+  .btn:active {
+    transform: scale(0.94); }
 
 .hidden {
   display: none; }
@@ -39,30 +53,45 @@ p {
 .header {
   margin-bottom: 1.5em; }
 
-.button-loading {
-  display: flex;
+.middle-section {
   margin: 1.5em 0; }
   @media only screen and (max-width: 768px) {
-    .button-loading {
+    .middle-section {
       flex-direction: column; } }
-  .button-loading .btn {
+  .middle-section .btn {
     margin-right: 1.5em; }
     @media only screen and (max-width: 768px) {
-      .button-loading .btn {
+      .middle-section .btn {
         margin-bottom: 1em;
         width: 100%; } }
 
-.rhyming-options {
+.group-label {
+  font-size: 0.8em;
+  opacity: 0.6; }
+
+.button-loading {
   display: flex;
-  align-items: center; }
+  margin-top: 1em; }
   @media only screen and (max-width: 768px) {
-    .rhyming-options {
+    .button-loading {
+      flex-direction: column; } }
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em; }
+  @media only screen and (max-width: 768px) {
+    .radio-container {
       flex-direction: column;
       align-items: flex-start; }
-      .rhyming-options div {
+      .radio-container div {
         margin: 0.25em 0; } }
-  .rhyming-options label {
+  .radio-container label {
     margin-right: 1em; }
+  .radio-container .line-input {
+    width: 2.75em;
+    margin-left: -1em;
+    padding: 0; }
 
 #text {
   width: 100%;
@@ -70,7 +99,9 @@ p {
   box-sizing: border-box;
   resize: vertical;
   line-height: 1.2;
-  color: #333333; }
+  color: #333333;
+  border: none;
+  border-radius: 0.3em; }
 
 .output-container {
   width: 100%;
@@ -79,7 +110,7 @@ p {
   box-sizing: border-box;
   min-height: 200px;
   background-color: #FFFFFF;
-  border: 1px solid lightgrey; }
+  border-radius: 0.3em; }
 
 .spinner {
   margin-right: 1.5em;

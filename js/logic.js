@@ -39,13 +39,12 @@ const fetchRhymes = async (word, option) => {
 }
 
 
-const generateRhymesStruct = async (option) => {
+const generateRhymesStruct = async (inputText, option) => {
 
     poem = []
     rhymesStruct = []
     rhymingWords = []
-    const textValue = document.querySelector('#text').value
-    const lines = textValue.split(/\r?\n/)
+    const lines = inputText.split(/\r?\n/)
     for (const line in lines) {
         poem.push(lines[line].split(' '))
     }
@@ -116,6 +115,48 @@ const generateRhymesStruct = async (option) => {
     return rhymesStruct
 }
 
+const matchRhymingWords = (rhymingMethod, lines) => {
+    if (rhymingMethod == 0) {
+        matchStanzas()
+    } else if (rhymingMethod == 1) {
+        if (lines == null || lines == "") {
+            matchLines(4)
+        } else {
+            matchLines(lines)
+        }
+    } else {
+        matchLines(poem.length)
+    }
+}
+
+const matchLines = (lines) => {
+    let colorIndex = 0
+    let count = 0
+    let linesBlock = []
+
+    for (let i = 0; i < poem.length; i++) {
+        if (poem[i] != "" && poem[i].length != 0) {
+            linesBlock = [...linesBlock, ...poem[i]]
+            count += 1
+            if (count == lines || i == poem.length - 1) {
+                // strip all words' punctuation for proper matching
+                for (let j = 0; j < linesBlock.length; j++) {
+                    linesBlock[j] = linesBlock[j].replace(/[^A-Za-z0-9_]/g,"").toLowerCase()
+                }
+                for (let key in rhymesStruct) {
+                    let matchingWords = rhymesStruct[key].filter(value => linesBlock.includes(value))
+                    if (matchingWords != [] && matchingWords != "" && matchingWords.length > 1) {
+                        colorIndex += 1
+                        console.log(i)
+                        colorizeWords(matchingWords, i - lines, i+1, colorIndex)
+                    }
+                }
+                count = 0
+                linesBlock = []
+            }
+        }
+    }
+}
 
 const matchStanzas = () => {
     let colorIndex = 0
@@ -178,4 +219,4 @@ const returnPoem = () => {
     return poem
 }
 
-export {generateRhymesStruct, matchStanzas, colors, returnPoem}
+export {generateRhymesStruct, matchRhymingWords, matchLines, colors, returnPoem}
