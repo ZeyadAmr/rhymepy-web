@@ -77,7 +77,6 @@ const generateRhymesStruct = async (inputText, option) => {
                     for (let line in poem) {
                         for (let word in poem[line]) {
 
-                            // console.log(poem[line][word])
                             word = poem[line][word].replace(/[^A-Za-z0-9_]/g,"").toLowerCase()
 
                             if (rhymingWords.includes(word)) {
@@ -133,27 +132,31 @@ const matchLines = (lines) => {
     let colorIndex = 0
     let count = 0
     let linesBlock = []
+    // remove trailing empty line in poem if it exists
+    if (poem[poem.length -1] == "" || poem[poem.length -1] == []) {poem.pop()}
 
     for (let i = 0; i < poem.length; i++) {
         if (poem[i] != "" && poem[i].length != 0) {
             linesBlock = [...linesBlock, ...poem[i]]
             count += 1
-            if (count == lines || i == poem.length - 1) {
-                // strip all words' punctuation for proper matching
-                for (let j = 0; j < linesBlock.length; j++) {
-                    linesBlock[j] = linesBlock[j].replace(/[^A-Za-z0-9_]/g,"").toLowerCase()
-                }
-                for (let key in rhymesStruct) {
-                    let matchingWords = rhymesStruct[key].filter(value => linesBlock.includes(value))
-                    if (matchingWords != [] && matchingWords != "" && matchingWords.length > 1) {
-                        colorIndex += 1
-                        console.log(i)
-                        colorizeWords(matchingWords, i - lines, i+1, colorIndex)
-                    }
-                }
-                count = 0
-                linesBlock = []
+        }
+        else {
+            continue
+        }
+        if (count == lines || i == poem.length - 1) {
+            // strip all words' punctuation for proper matching
+            for (let j = 0; j < linesBlock.length; j++) {
+                linesBlock[j] = linesBlock[j].replace(/[^A-Za-z0-9_]/g,"").toLowerCase()
             }
+            for (let key in rhymesStruct) {
+                let matchingWords = rhymesStruct[key].filter(value => linesBlock.includes(value))
+                if (matchingWords != [] && matchingWords != "" && matchingWords.length > 1) {
+                    colorIndex += 1
+                    colorizeWords(matchingWords, 0, i+2, colorIndex)
+                }
+            }
+            count = 0
+            linesBlock = []
         }
     }
 }
