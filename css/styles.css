@@ -95,13 +95,16 @@ p {
 
 #text {
   width: 100%;
+  min-height: 10em;
+  max-height: 40em;
   padding: 0.5em 1em 0 1em;
   box-sizing: border-box;
   resize: vertical;
   line-height: 1.2;
   color: #333333;
   border: none;
-  border-radius: 0.3em; }
+  border-radius: 0.3em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12); }
 
 .output-container {
   width: 100%;
@@ -110,7 +113,8 @@ p {
   box-sizing: border-box;
   min-height: 200px;
   background-color: #FFFFFF;
-  border-radius: 0.3em; }
+  border-radius: 0.3em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12); }
 
 .spinner {
   margin-right: 1.5em;
