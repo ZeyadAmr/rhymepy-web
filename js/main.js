@@ -19,11 +19,13 @@ rectangles.forEach(rect => rect.style.backgroundColor = randomColor)
 // Set a random color from the colors list as .btn background color
 btns.forEach(btn => btn.style.backgroundColor = randomColor)
 // Change textarea's height to match content height
-// textarea.style.maxHeight = 650 + "px"
 textarea.addEventListener("input", () => {
     textarea.style.height = ""
     textarea.style.height = textarea.scrollHeight + "px"
 })
+// Run on load to get right height when page is refreshed
+textarea.style.height = ""
+textarea.style.height = textarea.scrollHeight + "px"
 
 // Start Rhymepy
 analyzeButton.addEventListener("click", () => (async function() {

@@ -62,8 +62,11 @@ p {
     margin-right: 1.5em; }
     @media only screen and (max-width: 768px) {
       .middle-section .btn {
-        margin-bottom: 1em;
         width: 100%; } }
+  @media only screen and (max-width: 768px) {
+    .middle-section .spinner {
+      min-height: 2.5em;
+      margin: 1.5em 0 0 0; } }
 
 .group-label {
   font-size: 0.8em;
@@ -108,7 +111,7 @@ p {
 
 .output-container {
   width: 100%;
-  margin: 1em 0;
+  margin-bottom: 2em;
   padding: 0.5em 1em 0 1em;
   box-sizing: border-box;
   min-height: 200px;
