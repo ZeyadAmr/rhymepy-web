@@ -64,7 +64,6 @@ p {
     .flex-container {
       flex-direction: column; }
       .flex-container #text {
-        margin-right: 0;
         flex: 0 1 auto; }
       .flex-container .output-container {
         min-height: 10em;
@@ -143,7 +142,6 @@ p {
 
 #text {
   flex: 1;
-  margin-right: 0.75em;
   min-height: 10em;
   max-height: 40em;
   width: 100%;
