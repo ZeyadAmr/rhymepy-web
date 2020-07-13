@@ -37,6 +37,10 @@ analyzeButton.addEventListener("click", () => (async function() {
     const rhymingOption = document.querySelector('input[name="rhyming-options"]:checked').value 
     const rhymingMethod = document.querySelector('input[name="rhyming-methods"]:checked').value
     const lines = document.querySelector('input[name="lines-value"]').value
+    
+    // hide output and show input box
+    outputContainer.classList.add("hidden")
+    textarea.classList.remove("hidden")
 
     // check if textarea is not empty
     if (textValue.trim().length !== 0) {
