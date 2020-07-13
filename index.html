@@ -23,13 +23,16 @@
             <div class="flex-container">
 
                 <!-- Input text -->
-                <div class="input-container">
-                    <textarea id="text" placeholder="Roses are red..."></textarea>
+                <textarea id="text" placeholder="Roses are red..."></textarea>
+
+                <!-- Output text -->
+                <div class="output-container">
+                    <p class="output"></p>
                 </div>
 
                 <!-- Middle section: button, loading & options -->
                 <div class="middle-section">
-                    <div class="options-container">
+                    <div class="options-flex">
                         <label class="group-label">Highlight:</label>
                         <div class="rhyming-options radio-container">
                             <div>
@@ -45,26 +48,9 @@
                                 <label for="both">Both</label>
                             </div>
                         </div>
-                        <label class="group-label">Match by:</label>
-                        <div class="rhyming-methods radio-container">
-                            <div>
-                                <input type="radio" name="rhyming-methods" id="stanza" value=0 checked>
-                                <label for="stanza">Stanza</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="rhyming-methods" id="all" value=2>
-                                <label for="all">All text</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="rhyming-methods" id="lines" value=1>
-                                <label for="lines">Lines</label>
-                                <input class="line-input" type="number" min="1" max="999" placeholder="4" name="lines-value" id="lines-value">
-                            </div>
-                        </div>
                     </div>
 
                     <div class="button-loading">
-                        <button class="btn analyze-button">Analyze rhymes</button>
                         <div class="spinner hidden">
                             <div class="rect1"></div>
                             <div class="rect2"></div>
@@ -72,15 +58,35 @@
                             <div class="rect4"></div>
                             <div class="rect5"></div>
                         </div>
+                        <button class="btn analyze-button">Analyze rhymes</button>
+                    </div>
+
+                    <div class="methods-flex">
+                        <div>
+                            <label class="group-label">Match by:</label>
+                            <div class="rhyming-methods radio-container">
+                                <div>
+                                    <input type="radio" name="rhyming-methods" id="stanza" value=0 checked>
+                                    <label for="stanza">Stanza</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="rhyming-methods" id="all" value=2>
+                                    <label for="all">All text</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="rhyming-methods" id="lines" value=1>
+                                    <label for="lines">Lines</label>
+                                    <input class="line-input" type="number" min="1" max="999" placeholder="4" name="lines-value" id="lines-value">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Output text -->
-                <div class="output-container">
-                    <p class="output"></p>
-                </div>
-
             </div>
+
+
+        </div>
 
         </div>
 

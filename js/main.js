@@ -25,7 +25,7 @@ textarea.addEventListener("input", () => {
 })
 // Run on load to get right height when page is refreshed
 textarea.style.height = ""
-textarea.style.height = textarea.scrollHeight + "px"
+textarea.style.height = textarea.scrollHeight + 3 + "px"
 
 // Start Rhymepy
 analyzeButton.addEventListener("click", () => (async function() {

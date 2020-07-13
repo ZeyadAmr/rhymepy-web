@@ -3,7 +3,7 @@ const url='https://api.datamuse.com/words?'
 let rhymesStruct = {}
 let poem = []
 let rhymingWords = []
-const colors = ["Gold", "MediumTurquoise", "LightCoral", "LightGreen", "LightPink", "LightSalmon", "LightSkyBlue", "Orange", "LightSeaGreen", "Violet", "Plum"]
+const colors = ["Gold", "MediumTurquoise", "LightCoral", "LightGreen", "LawnGreen", "LightPink", "LightSalmon", "LightSkyBlue", "Orange", "Violet", "Plum", "PaleTurquoise", "Bisque" ]
 
 
 const fetchRhymes = async (word, option) => {

@@ -3,7 +3,11 @@
 
 
 // Variables
-$breakpoint: 768px
+$max-container: 1300px
+$breakpoint-lg: 1200px
+$breakpoint-md: 1024px
+$breakpoint-sm: 768px
+$breakpoint-xs: 480px
 $radius: 0.3em
 
 
@@ -14,12 +18,16 @@ body
   font-family: "Open Sans", sans-serif
   font-size: 1.125em
   line-height: 1.5
+  padding-bottom: 2em
 
 .container 
   margin: 0 auto
-  padding: 0em 1em 0 1em
+  padding: 0em 2em 0 2em
   box-sizing: border-box
-  max-width: $breakpoint
+  max-width: $max-container
+  @media only screen and (max-width: $breakpoint-sm)
+    padding: 0em 1em 0 1em
+    
 
 h1, h2
   font-family: "Open Sans Condensed", sans-serif
@@ -64,18 +72,34 @@ p
 .header
   margin-bottom: 1.5em
 
-.middle-section
-  margin: 1.5em 0
-  @media only screen and (max-width: $breakpoint)
+.flex-container
+  display: flex
+  flex-wrap: wrap
+  @media only screen and (max-width: $breakpoint-lg)
     flex-direction: column
-  .btn
-    margin-right: 1.5em
-    @media only screen and (max-width: $breakpoint)
-      width: 100%
-  .spinner
-    @media only screen and (max-width: $breakpoint)
-      min-height: 2.5em
-      margin: 1.5em 0 0 0
+    #text
+      margin-right: 0
+      flex: 0 1 auto
+    .output-container
+      min-height: 10em
+      flex: 0 1 auto
+      // order: 3
+
+.middle-section
+  font-size: 0.9em
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin: 1em 0
+  padding: 1em
+  flex: 0 1 100%
+  background-color: #FCFCFC
+  border-radius: $radius
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.12)
+  @media only screen and (max-width: $breakpoint-md)
+    flex-direction: column
+    .button-loading
+      order: 3
 
 .group-label 
   font-size: 0.8em  
@@ -83,15 +107,23 @@ p
 
 .button-loading
   display: flex
-  margin-top: 1em
-  @media only screen and (max-width: $breakpoint)
-    flex-direction: column
+  flex: 1
+  justify-content: center
+  flex-direction: column
+
+.methods-flex
+  display: flex
+  justify-content: flex-end
+  flex: 2
+
+.options-flex
+  flex: 2
 
 .radio-container
   display: flex
   align-items: center
   margin-bottom: 0.5em
-  @media only screen and (max-width: $breakpoint)
+  @media only screen and (max-width: $breakpoint-xs)
     flex-direction: column
     align-items: flex-start
     div
@@ -104,7 +136,8 @@ p
     padding: 0
 
 #text
-  width: 100%
+  flex: 1
+  margin-right: 0.75em
   min-height: 10em
   max-height: 40em
   padding: 0.5em 1em 0 1em
@@ -117,11 +150,12 @@ p
   box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.12)
 
 .output-container
+  flex: 1
   width: 100%
-  margin-bottom: 2em
+  max-height: 40em
   padding: 0.5em 1em 0 1em
   box-sizing: border-box
-  min-height: 200px
+  overflow-y: auto
   background-color: #FFFFFF
   border-radius: $radius
   box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.12)
@@ -131,9 +165,8 @@ p
   margin-right: 1.5em
   text-align: center
   font-size: 0.75em
-  @media only screen and (max-width: $breakpoint)
-    height: 2em 
-    margin-bottom: 0.5em
+  height: 2em 
+  margin-bottom: 0.5em
 
   > div
     background-color: #333
