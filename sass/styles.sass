@@ -3,7 +3,6 @@
 
 
 // Variables
-$max-container: 1300px
 $breakpoint-lg: 1200px
 $breakpoint-md: 1024px
 $breakpoint-sm: 768px
@@ -24,7 +23,7 @@ body
   margin: 0 auto
   padding: 0em 2em 0 2em
   box-sizing: border-box
-  max-width: $max-container
+  max-width: $breakpoint-lg
   @media only screen and (max-width: $breakpoint-sm)
     padding: 0em 1em 0 1em
     
@@ -48,7 +47,7 @@ p
   color: rgba(0, 0, 0, 0.85)
   border: none
   border-radius: 0.2em
-  box-shadow: none
+  box-shadow: 0 1px 0px rgba(0,0,0,0.06), 0 1px 1px rgba(0,0,0,0.12)
   cursor: pointer
   transition: all 0.3s
   opacity: 0.85
@@ -97,10 +96,28 @@ p
   border-radius: $radius
   box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.12)
   @media only screen and (max-width: $breakpoint-md)
-    flex-direction: column
+    justify-content: flex-start
+    .methods-flex, .options-flex
+      flex: 0 1 auto
+      margin: 0 1.5em
     .button-loading
+      align-items: center
+      flex: 1
       order: 3
-
+      .btn
+        width: 16em
+  @media only screen and (max-width: $breakpoint-sm)
+    flex-wrap: wrap
+    justify-content: space-evenly
+    .methods-flex, .options-flex
+      margin: 0
+      // flex: 1
+    .button-loading
+      flex: 0 1 100%
+      margin-top: 0.5em
+  @media only screen and (max-width: $breakpoint-xs)
+    justify-content: space-between
+  
 .group-label 
   font-size: 0.8em  
   opacity: 0.6
@@ -123,7 +140,7 @@ p
   display: flex
   align-items: center
   margin-bottom: 0.5em
-  @media only screen and (max-width: $breakpoint-xs)
+  @media only screen and (max-width: $breakpoint-md)
     flex-direction: column
     align-items: flex-start
     div
@@ -140,16 +157,43 @@ p
   margin-right: 0.75em
   min-height: 10em
   max-height: 40em
+  width: 100%
   padding: 0.5em 1em 0 1em
   box-sizing: border-box
   resize: vertical
-  line-height: 1.2
+  line-height: 1.5
   color: #333333
   border: none
   border-radius: $radius
   box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.12)
 
+#reset-button
+  position: absolute
+  top: 1em
+  right: 1em
+  opacity: 0.6
+  &:hover
+    opacity: 1
+
+#text-reset
+  margin-top: 1em
+  align-self: center
+  padding: 0.125em 1em
+  background: lightgrey
+  text-align: center
+  border-radius: $radius
+  opacity: 0.5
+  cursor: pointer
+  transition: all 0.3s
+  &:hover
+    opacity: 0.8
+    transform: scale(0.98)
+  &:active
+    opacity: 1
+    transform: scale(0.94)
+
 .output-container
+  position: relative
   flex: 1
   width: 100%
   max-height: 40em

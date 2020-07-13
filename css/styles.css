@@ -11,7 +11,7 @@ body {
   margin: 0 auto;
   padding: 0em 2em 0 2em;
   box-sizing: border-box;
-  max-width: 1300px; }
+  max-width: 1200px; }
   @media only screen and (max-width: 768px) {
     .container {
       padding: 0em 1em 0 1em; } }
@@ -35,7 +35,7 @@ p {
   color: rgba(0, 0, 0, 0.85);
   border: none;
   border-radius: 0.2em;
-  box-shadow: none;
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.06), 0 1px 1px rgba(0, 0, 0, 0.12);
   cursor: pointer;
   transition: all 0.3s;
   opacity: 0.85; }
@@ -83,9 +83,28 @@ p {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12); }
   @media only screen and (max-width: 1024px) {
     .middle-section {
-      flex-direction: column; }
+      justify-content: flex-start; }
+      .middle-section .methods-flex, .middle-section .options-flex {
+        flex: 0 1 auto;
+        margin: 0 1.5em; }
       .middle-section .button-loading {
-        order: 3; } }
+        align-items: center;
+        flex: 1;
+        order: 3; }
+        .middle-section .button-loading .btn {
+          width: 16em; } }
+  @media only screen and (max-width: 768px) {
+    .middle-section {
+      flex-wrap: wrap;
+      justify-content: space-evenly; }
+      .middle-section .methods-flex, .middle-section .options-flex {
+        margin: 0; }
+      .middle-section .button-loading {
+        flex: 0 1 100%;
+        margin-top: 0.5em; } }
+  @media only screen and (max-width: 480px) {
+    .middle-section {
+      justify-content: space-between; } }
 
 .group-label {
   font-size: 0.8em;
@@ -109,7 +128,7 @@ p {
   display: flex;
   align-items: center;
   margin-bottom: 0.5em; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 1024px) {
     .radio-container {
       flex-direction: column;
       align-items: flex-start; }
@@ -127,16 +146,43 @@ p {
   margin-right: 0.75em;
   min-height: 10em;
   max-height: 40em;
+  width: 100%;
   padding: 0.5em 1em 0 1em;
   box-sizing: border-box;
   resize: vertical;
-  line-height: 1.2;
+  line-height: 1.5;
   color: #333333;
   border: none;
   border-radius: 0.3em;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12); }
 
+#reset-button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  opacity: 0.6; }
+  #reset-button:hover {
+    opacity: 1; }
+
+#text-reset {
+  margin-top: 1em;
+  align-self: center;
+  padding: 0.125em 1em;
+  background: lightgrey;
+  text-align: center;
+  border-radius: 0.3em;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s; }
+  #text-reset:hover {
+    opacity: 0.8;
+    transform: scale(0.98); }
+  #text-reset:active {
+    opacity: 1;
+    transform: scale(0.94); }
+
 .output-container {
+  position: relative;
   flex: 1;
   width: 100%;
   max-height: 40em;

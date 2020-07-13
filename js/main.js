@@ -9,7 +9,10 @@ const rectangles = spinner.querySelectorAll("div")
 const btns = document.querySelectorAll('.btn')
 const randomColor = colors[Math.floor(Math.random()*colors.length)]
 const textarea = document.querySelector('#text')
+const outputContainer = document.querySelector('.output-container')
 let output = document.querySelector('.output')
+const resetButton = document.querySelector('#reset-button')
+const textReset = document.querySelector('#text-reset')
 
 
 // Set a random color from the colors list as the logo's background color
@@ -23,9 +26,10 @@ textarea.addEventListener("input", () => {
     textarea.style.height = ""
     textarea.style.height = textarea.scrollHeight + "px"
 })
-// Run on load to get right height when page is refreshed
+// Run on load to get right textarea height when page is refreshed
 textarea.style.height = ""
 textarea.style.height = textarea.scrollHeight + 3 + "px"
+
 
 // Start Rhymepy
 analyzeButton.addEventListener("click", () => (async function() {
@@ -34,15 +38,35 @@ analyzeButton.addEventListener("click", () => (async function() {
     const rhymingMethod = document.querySelector('input[name="rhyming-methods"]:checked').value
     const lines = document.querySelector('input[name="lines-value"]').value
 
-    output.innerHTML = ""
-    spinner.classList.remove("hidden")
-    await generateRhymesStruct(textValue, rhymingOption)
-    matchRhymingWords(rhymingMethod, lines)
-    displayPoem()
-    spinner.classList.add("hidden")
+    // check if textarea is not empty
+    if (textValue.trim().length !== 0) {
+        output.innerHTML = ""
+        spinner.classList.remove("hidden")
+        await generateRhymesStruct(textValue, rhymingOption)
+        matchRhymingWords(rhymingMethod, lines)
+        displayPoem()
+        spinner.classList.add("hidden")
+    }
 })()
+
 )
 
+// Reset button
+resetButton.addEventListener("click", () => {
+    outputContainer.classList.add("hidden")
+    textarea.classList.remove("hidden")
+})
+
+// Text reset
+textReset.addEventListener("click", () => {
+    // Reset textarea height
+    textarea.value = ""
+    textarea.style.height = ""
+    textarea.style.height = textarea.scrollHeight + 3 + "px"
+
+    outputContainer.classList.add("hidden")
+    textarea.classList.remove("hidden")
+})
 
 const displayPoem = () => {
     const poem = returnPoem()
@@ -68,4 +92,6 @@ const displayPoem = () => {
 
         output.appendChild(document.createElement('br'))
     }
+    outputContainer.classList.remove("hidden")
+    textarea.classList.add("hidden")
 }
