@@ -44,6 +44,9 @@ const generateRhymesStruct = async (inputText, option) => {
     poem = []
     rhymesStruct = []
     rhymingWords = []
+    const poemLength = inputText.split(/\s+/).length
+    let wordCounter = 0
+    let percentage = 0 
     const lines = inputText.split(/\r?\n/)
     for (const line in lines) {
         poem.push(lines[line].split(' '))
@@ -63,7 +66,7 @@ const generateRhymesStruct = async (inputText, option) => {
     for (let testLine in poem) {
         for (let testWord in poem[testLine]) {
 
-            if (testLine == []) {break}
+            if (poem[testLine] == [] || poem[testLine] == "") {break}
 
             testWord = poem[testLine][testWord].replace(/[^A-Za-z0-9_]/g,"").toLowerCase()
             let firstTestWordExistence = exists(testWord)
@@ -106,10 +109,14 @@ const generateRhymesStruct = async (inputText, option) => {
                 })
 
             }
+            // progressbar
+            wordCounter++
+            percentage = (wordCounter * 100) / poemLength
+            document.querySelector('#progressbarText').innerText = wordCounter + ' / ' + poemLength + ' words'
+            document.querySelector('#progressbarPercentage').innerText = Math.round(percentage) + '%'
+            document.querySelector('#progressbarInner').style.width = percentage + "%"
         }
     }
-
-    // TODO: implement progress bar
 
     return rhymesStruct
 }

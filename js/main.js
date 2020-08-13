@@ -4,7 +4,8 @@ import {generateRhymesStruct, matchRhymingWords, colors, returnPoem} from './log
 // variables
 const analyzeButton = document.querySelector('.analyze-button')
 const logoText = document.querySelector('.logo-text')
-const spinner = document.querySelector('.spinner')
+const spinner = document.querySelector('#spinner')
+const progressbar = document.querySelector('#progressbar')
 const rectangles = spinner.querySelectorAll("div") 
 const btns = document.querySelectorAll('.btn')
 const randomColor = colors[Math.floor(Math.random()*colors.length)]
@@ -17,6 +18,8 @@ const textReset = document.querySelector('#text-reset')
 
 // Set a random color from the colors list as the logo's background color
 logoText.style.background = "linear-gradient(to top," + randomColor +" 30%, transparent 30%)"
+// Set a random color from the colors list as the progressbar's color
+progressbarInner.style.backgroundColor = randomColor
 // Set a random color from the colors list as loading spinner's color
 rectangles.forEach(rect => rect.style.backgroundColor = randomColor)
 // Set a random color from the colors list as .btn background color
@@ -42,14 +45,20 @@ analyzeButton.addEventListener("click", () => (async function() {
     outputContainer.classList.add("hidden")
     textarea.classList.remove("hidden")
 
+
     // check if textarea is not empty
     if (textValue.trim().length !== 0) {
+        analyzeButton.disabled = true
         output.innerHTML = ""
         spinner.classList.remove("hidden")
+        progressbar.classList.remove("hidden")
         await generateRhymesStruct(textValue, rhymingOption)
         matchRhymingWords(rhymingMethod, lines)
         displayPoem()
         spinner.classList.add("hidden")
+        progressbar.classList.add("hidden")
+        analyzeButton.disabled = false
+        progressbarInner.style.width = "1%"
     }
 })()
 

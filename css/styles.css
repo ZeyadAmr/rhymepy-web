@@ -39,12 +39,15 @@ p {
   cursor: pointer;
   transition: all 0.3s;
   opacity: 0.85; }
-  .btn:hover {
+  .btn:hover:enabled {
     transform: scale(0.98);
     opacity: 1;
     color: rgba(0, 0, 0, 0.95); }
-  .btn:active {
+  .btn:active:enabled {
     transform: scale(0.94); }
+  .btn:disabled {
+    opacity: 0.60;
+    cursor: not-allowed; }
 
 .hidden {
   display: none; }
@@ -190,6 +193,33 @@ p {
   background-color: #FFFFFF;
   border-radius: 0.3em;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12); }
+
+#progressbar {
+  margin-top: 1.5em;
+  width: 100%; }
+  #progressbar #progressbarOuter {
+    width: 100%;
+    background-color: #DDD;
+    position: relative;
+    border-radius: 0.2em; }
+    #progressbar #progressbarOuter #progressbarInner {
+      width: 1%;
+      height: 1.2em;
+      background-color: lightgreen;
+      transition: width 0.5s linear;
+      border-radius: 0.2em; }
+  #progressbar #progressbarText {
+    color: #333;
+    width: 100%;
+    font-size: 0.8em; }
+  #progressbar #progressbarPercentage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.8em;
+    color: #222; }
 
 .spinner {
   margin-right: 1.5em;
