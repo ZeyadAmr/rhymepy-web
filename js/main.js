@@ -68,6 +68,7 @@ analyzeButton.addEventListener("click", () => (async function() {
 resetButton.addEventListener("click", () => {
     outputContainer.classList.add("hidden")
     textarea.classList.remove("hidden")
+    progressbar.classList.add("hidden")
 })
 
 // Text reset
