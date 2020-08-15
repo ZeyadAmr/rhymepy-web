@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 47.425281 42.523357"
+   height="42.523357mm"
+   width="47.425282mm">
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-85.189026,-83.245842)"
+     id="layer1">
+    <text
+       id="text12"
+       y="66.981094"
+       x="20.419666"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.8px;line-height:1.25;font-family:'Open Sans Condensed';-inkscape-font-specification:'Open Sans Condensed, ';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.8px;font-family:'Open Sans Condensed';-inkscape-font-specification:'Open Sans Condensed, ';stroke-width:0.264583"
+         y="66.981094"
+         x="20.419666"
+         id="tspan10" /></text>
+    <text
+       id="text16"
+       y="123.8533"
+       x="45.512173"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.8px;line-height:1.25;font-family:'Open Sans Condensed';-inkscape-font-specification:'Open Sans Condensed, ';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.8px;font-family:'Open Sans Condensed';-inkscape-font-specification:'Open Sans Condensed, ';stroke-width:0.264583"
+         y="123.8533"
+         x="45.512173"
+         id="tspan14" /></text>
+    <g
+       transform="matrix(1.1587364,0,0,1.0622841,-18.197868,-7.3032189)"
+       id="g852">
+      <g
+         transform="matrix(1.0062595,0,0,0.98687493,-0.49872267,1.6278509)"
+         id="g975">
+        <rect
+           y="84.691948"
+           x="89.246239"
+           height="40.582153"
+           width="40.576786"
+           id="rect995"
+           style="fill:#111111;fill-opacity:1;stroke:none;stroke-width:1.80072;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <rect
+           transform="scale(-1)"
+           y="-124.59728"
+           x="-123.23205"
+           height="11.54132"
+           width="26.991846"
+           id="rect22"
+           style="fill:#00847e;fill-opacity:1;stroke-width:0.245602" />
+        <text
+           transform="scale(0.98611814,1.0140773)"
+           id="text20"
+           y="119.9986"
+           x="98.166763"
+           style="font-style:normal;font-weight:normal;font-size:48.6467px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.72626;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:48.6467px;font-family:'Open Sans Condensed';-inkscape-font-specification:'Open Sans Condensed, Bold Condensed';fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.72626;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             y="119.9986"
+             x="98.166763"
+             id="tspan18">R</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
